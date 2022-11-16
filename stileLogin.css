@@ -1,5 +1,16 @@
-h1{
-    color: blue;
-    font-size: 36px;
-    text-align: center;
+
+
+img.titolo{
+    display: block;
+    margin:0 auto;
+}
+h2{
+    color: #F7D263;
+    font-size: 35px;
+    text-align: -moz-left;
+
+
+}
+body{
+    background-color: #FFF8DC;
 }
