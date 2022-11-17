@@ -3,14 +3,19 @@
 img.titolo{
     display: block;
     margin:0 auto;
+    text-align: center;
 }
-h2{
-    color: #F7D263;
-    font-size: 35px;
-    text-align: -moz-left;
 
 
-}
+
 body{
     background-color: #8B0000;
+}
+div{
+
+    position: absolute;
+    top:500px;
+    right:800px;
+
+
 }
