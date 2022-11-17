@@ -1,0 +1,23 @@
+#operazioni
+{
+    text-align:center;
+    margin-top: 50px;
+    background-color: #8B0000;
+
+}.container{
+     width: 28%;
+     display: inline-block;
+     margin: 2%;
+     color: #2d3e50;
+    background-color: goldenrod;
+ }
+a { display:block;
+    width:100px;
+    height:50px;
+    margin:5px;
+    padding: 5px;
+    background: url(https://www.menu.it/img/logo-menu.png) no-repeat scroll 0 0;
+    color:#000;
+    overflow:hidden;
+    text-decoration:none;
+    line-height:50px }

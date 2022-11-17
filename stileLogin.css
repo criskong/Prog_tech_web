@@ -10,6 +10,8 @@ img.titolo{
 
 body{
     background-color: #8B0000;
+
+
 }
 div{
 
@@ -19,3 +21,6 @@ div{
 
 
 }
+a:active { color: #ffd700; }
+a:visited { color: #daa520; }
+a:hover{color: #ffd700; }
