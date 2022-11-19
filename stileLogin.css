@@ -13,12 +13,9 @@ body{
 
 
 }
-div{
 
-    position: absolute;
-    top:500px;
-    right:800px;
-
+form{
+    width: 300px;
 
 }
 a:active { color: #ffd700; }
