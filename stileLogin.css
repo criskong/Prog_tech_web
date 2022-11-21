@@ -1,21 +1,19 @@
-
-
 img.titolo{
     display: block;
-    margin:0 auto;
-    text-align: center;
+    margin: auto;
+    position: center;
 }
 
 
 
 body{
     background-color: #8B0000;
-
-
 }
 
 form{
     width: 300px;
+    margin:auto;
+
 
 }
 a:active { color: #ffd700; }
