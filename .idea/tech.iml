@@ -5,8 +5,9 @@
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/GoogleTranslate" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.9 (Progetto_tech_web)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="bootstrap" level="application" />
   </component>
