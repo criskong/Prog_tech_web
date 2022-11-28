@@ -4,12 +4,11 @@
 }
 
 
-.cart-page{
-    margin: 70px auto;
-}
+
 table{
-    width: 100%;
-    border-collapse: collapse;
+    width: 70%;
+    margin-left: 15%;
+
 }
 th{
     text-align: left;
@@ -52,3 +51,6 @@ th:last-child{
     text-align: right;
 }
 
+.position{
+top: 200%;
+}
