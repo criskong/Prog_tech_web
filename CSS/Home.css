@@ -1,0 +1,59 @@
+.bg-success {
+    --bs-bg-opacity: 1;
+    background-color: #8B0000 !important;
+}
+
+.marg{
+
+    margin: auto;
+    opacity: 0.6;
+
+}
+
+h4{
+    color: #8B0000;
+    position: absolute;
+    top: -250px;
+    left: 45%;
+}
+
+p{
+    position: absolute;
+    top: -200px;
+    left: 18%;
+
+}
+
+p.P1{
+    position: absolute;
+    top: -200px;
+    left: 36%;
+}
+
+h4.C1{
+    color: #8B0000;
+    position: absolute;
+    top: -250px;
+    left: 42%;
+
+}
+p.P2{
+    position: absolute;
+    top: -200px;
+    left: 33%;
+
+}
+h4.C2{
+    color: #8B0000;
+    position: absolute;
+    top: -250px;
+    left: 45%;
+
+}
+
+
+.textColor{
+    color: white;
+
+
+}
