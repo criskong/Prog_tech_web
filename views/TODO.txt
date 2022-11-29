@@ -1,0 +1,6 @@
+Vedere singole pagine per cose da fare sulle stesse
+
+Per ogni pagina in *logged_in*:
+
+    Verificare (javascript) che l'utente sia loggato [che sia presente un cookie che vi dirò]
+        Se non è presente redirigere alla pagina di login

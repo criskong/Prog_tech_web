@@ -1,0 +1,44 @@
+img.titolo{
+    display: block;
+    margin: auto;
+    position: center;
+}
+
+
+
+.color{
+    background-color: #8B0000;
+}
+.color1{
+    background-color: silver;
+}
+
+form{
+    width: 300px;
+    margin:auto;
+
+
+}
+
+button.btn{
+    position: absolute;
+    left: 54%;
+    color: black;
+    border-color: orangered;
+
+
+}
+div.btn-group{
+    position: absolute;
+    left: 42%;
+}
+
+button.b2{
+    position: absolute;
+    left: 3%;
+}
+
+
+a:active { color: #ffd700; }
+a:visited { color: #daa520; }
+a:hover{color: #ffd700; }
