@@ -10,7 +10,7 @@ var loginRouter = require('./routes/login');
 var menuRouter = require('./routes/menu');
 var accountRouter = require('./routes/account');
 var composeRouter = require('./routes/compose');
-var savedmenuRouter = require('./routes/compose');
+var savedmenuRouter = require('./routes/savedmenu');
 
 var app = express();
 
