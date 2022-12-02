@@ -32,7 +32,6 @@ const connP = mongoose.connect(process.env.MONGO_URI,{
 app.use(sessions({
   secret: "guestSecret",
   saveUninitialized: false,
-  //cookie: {secure: true},
   resave: false,
   store : SessionStorage.create({clientPromise: connP})
 }));
