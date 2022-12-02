@@ -1,9 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET Account page. */
 router.get('/', function(req, res, next) {
-  res.render('logged_in/account');
+  
+  if(req.isAuthenticated())
+    res.render('logged_in/account');
+  else
+    res.redirect('/login');
+});
+
+/* GET Logout. */
+router.get('/logout', function(req, res, next) {
+  res.logout();
+  res.redirect('/');
 });
 
 module.exports = router;
