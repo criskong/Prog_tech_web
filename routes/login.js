@@ -1,23 +1,30 @@
 var createError = require('http-errors');
 var express = require('express');
 var router = express.Router();
+var passport = require("passport");
+var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 
-/* Login page. */
+//Passport setup
+passport.use(new GoogleStrategy({
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: '/login/google',
+  scope: [ 'profile' ]
+},
+function(accessToken, refreshToken, profile, cb) 
+{
+  console.log(profile);//Account database handling
+}));
+
+/* GET Login page. */
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Express' });
+  res.render('login', { failed: req.query.failed });
 });
 
-/* GET login by selected method. */
-router.get('/:method', function(req, res, next) {
-  
-  if(req.params.method === "google")
-  {
-      res.send("<h1 style=\"position:center;\">Google login</h1>");
-      //Handle google login
-  }
-  else
-    next(createError(404));
-
-});
+/* GET Google OAuth handling. */
+router.get('/google', passport.authenticate('google', {
+  successReturnToOrRedirect: '/account',
+  failureRedirect: '/login?failed=true'
+}));
 
 module.exports = router;
