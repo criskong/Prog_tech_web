@@ -7,13 +7,18 @@ var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: '/login/google',
+  callbackURL: '/login/google/callback',
   scope: [ 'profile' ]
 },
 function(accessToken, refreshToken, profile, cb) 
 {
   console.log(profile);//Account database handling
+
+  cb(null,profile);
 }));
+
+passport.serializeUser((user,done) => { done(null,user.id)});
+passport.deserializeUser((userId,done) => { done(null,userId)});
 
 /* GET Login page. */
 router.get('/', function(req, res, next) {
@@ -21,7 +26,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET Google OAuth handling. */
-router.get('/google', passport.authenticate('google', {
+router.get('/google', passport.authenticate('google'));
+
+/* GET Google OAuth handling. */
+router.get('/google/callback', passport.authenticate('google', {
   successReturnToOrRedirect: '/account',
   failureRedirect: '/login?failed=true'
 }));

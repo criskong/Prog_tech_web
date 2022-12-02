@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   if(req.isAuthenticated())
     res.render('logged_in/compose');
   else
-    res.redirect('/login');
+    res.redirect('/login?failed=false');
 });
 
 /* GET Page for paying the composed menu. */

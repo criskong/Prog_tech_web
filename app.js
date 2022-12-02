@@ -7,6 +7,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport');
+var sessions = require('express-session');
+var SessionStorage = require('connect-mongo');
+var mongoose = require('mongoose');
 
 //Routers
 var indexRouter = require('./routes/index');
@@ -16,10 +19,27 @@ var accountRouter = require('./routes/account');
 var composeRouter = require('./routes/compose');
 var savedmenuRouter = require('./routes/savedmenu');
 
+//Initializing Express
 var app = express();
+
+//Database connection
+const connP = mongoose.connect(process.env.MONGO_URI,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(m => m.connection.getClient());
+
+//Session middleware
+app.use(sessions({
+  secret: "guestSecret",
+  saveUninitialized: false,
+  //cookie: {secure: true},
+  resave: false,
+  store : SessionStorage.create({clientPromise: connP})
+}));
 
 //Passport middleware
 app.use(passport.initialize());
+app.use(passport.session());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
