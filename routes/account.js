@@ -12,8 +12,14 @@ router.get('/', function(req, res, next) {
 
 /* GET Logout. */
 router.get('/logout', function(req, res, next) {
-  res.logout();
-  res.redirect('/');
+  req.logout(function(err) {
+    
+    if (err) 
+      return next(err); 
+    else
+      res.redirect('/');
+  });
+
 });
 
 module.exports = router;
