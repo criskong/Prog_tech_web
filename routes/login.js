@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require("passport");
 var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
+var Account = require('../models/Account');
 
 //Passport setup
 passport.use(new GoogleStrategy({
@@ -10,14 +11,30 @@ passport.use(new GoogleStrategy({
   callbackURL: '/login/google/callback',
   scope: [ 'profile' ]
 },
-function(accessToken, refreshToken, profile, cb) 
-{
-  console.log(profile);//Account database handling
+async (accessToken, refreshToken, profile, cb) => {
 
-  cb(null,profile);
+  //Getting account info for verifying its existence
+  var user = await Account.findOne({
+    id: profile.id,
+    provider: 'google'
+  });
+
+  //Creating the user if not yet registered
+  if(!user)
+  {
+    user = await Account.create({
+      id: profile.id,
+      provider: profile.provider,
+      name: profile.name.givenName,
+      surname: profile.name.familyName,
+      profile_picture: profile.photos[0].value
+    });
+  }
+
+  cb(null,user);
 }));
 
-passport.serializeUser((user,done) => { done(null,user.id)});
+passport.serializeUser((user,done) => { done(null,user._id)});
 passport.deserializeUser((userId,done) => { done(null,userId)});
 
 /* GET Login page. */
