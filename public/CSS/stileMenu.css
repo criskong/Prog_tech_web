@@ -1,23 +1,116 @@
+.bg-success {
+    --bs-bg-opacity: 1;
+    background-color: #8B0000 !important;
+}
+
+.marg{
+
+    margin: auto;
+    opacity: 0.6;
+
+}
+
+h4{
+    color: #8B0000;
+    position: absolute;
+    top: -250px;
+    left: 45%;
+}
+
+p{
+    position: absolute;
+    top: -200px;
+    left: 18%;
+
+}
+
+p.P1{
+    position: absolute;
+    top: -200px;
+    left: 36%;
+}
+
+h4.C1{
+    color: #8B0000;
+    position: absolute;
+    top: -250px;
+    left: 42%;
+
+}
+p.P2{
+    position: absolute;
+    top: -200px;
+    left: 33%;
+
+}
+h4.C2{
+    color: #8B0000;
+    position: absolute;
+    top: -250px;
+    left: 45%;
+
+}
+
+
+.textColor{
+    color: white;
+}
+
+.d-block{
+    border-radius: 15px 15px 15px 15px;
+}
+
 #operazioni
 {
     text-align:center;
     margin-top: 50px;
     background-color: #8B0000;
 
-}.container{
-     width: 28%;
-     display: inline-block;
-     margin: 2%;
-     color: #2d3e50;
-    background-color: goldenrod;
- }
-a { display:block;
-    width:40px;
-    height:60px;
-    margin:5px;
+}
+h1{
+    color: #8B0000;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    text-align: left;
     padding: 5px;
-    background: url(https://www.menu.it/img/logo-menu.png ) no-repeat scroll 0 0;
-    color:#000;
-    overflow:hidden;
-    text-decoration:none;
-    line-height:50px }
+    color: white;
+    background: #8B0000;
+}
+td{
+    padding: 10px 5px;
+}
+td input{
+    width:40px;
+    height: 30px;
+    padding: 5px;
+}
+td a{
+    color: red;
+    font-size: 12px;
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+.total-price table{
+    border-top: 3px solid black;
+    width:100%;
+    max-width: 350px;
+}
+td:last-child{
+    text-align: right;
+}
+th:last-child{
+    text-align: right;
+}
+
+.mensa{
+
+    background-color: #8B0000;
+    color:white;
+}
