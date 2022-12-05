@@ -1,0 +1,32 @@
+.bg-success {
+    --bs-bg-opacity: 1;
+    background-color: #8B0000 !important;
+}
+.fw-bold{
+    color: #8B0000;
+}
+#pulsante{
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border: solid 1px #8B0000;
+    background: #8B0000;
+    margin-right: 95%;
+
+}
+.list-group{
+    border-radius: 10px 10px 10px 10px;
+    margin-right: 40%;
+}
+#tabella2{
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 80%;
+    margin-top: -13%;
+    width: 50%;
+}
+div.h4{
+    text-align: center;
+}
