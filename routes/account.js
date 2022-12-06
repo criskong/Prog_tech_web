@@ -1,11 +1,25 @@
 var express = require('express');
+const passport = require('passport');
 var router = express.Router();
+var Account = require('../models/Account');
 
 /* GET Account page. */
-router.get('/', function(req, res, next) {
+router.get('/', async (req, res, next) => {
   
   if(req.isAuthenticated())
-    res.render('logged_in/account');
+  {
+    //Getting the info of the account related to the session
+    var aqres = await Account.findById(req.session.passport.user);
+
+    //TODO: getting all the orders associated with the account
+
+    //Rendering the page with the required parameters
+    res.render('logged_in/account', { 
+      account: aqres,
+      orders:[{}]
+    });
+
+  }
   else
     res.redirect('/login?failed=false');
 });
