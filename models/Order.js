@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var Item = require('Item');
 
 var OrderSchema = new mongoose.Schema({
     owner_id:{
@@ -7,12 +6,16 @@ var OrderSchema = new mongoose.Schema({
         required: true
     },
     items:{
-        type: [Item],
+        type: [String], //Items will be an array of Items saved using json format
         required: true
     },
     total_price:{
         type: Number,
         required: true
+    },
+    date:{ 
+        type: Date, 
+        default: Date.now 
     },
     status:{
         type: String,
