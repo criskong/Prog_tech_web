@@ -19,7 +19,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col bg-success p-3 text-white">
-            <img src=icon.png id="ImmLogo">
+            <img src="icon.png" id="ImmLogo">
             <div class="text-box">
                 <h1><span class="auto-input"></span></h1>
                 <p>L'app per prenotare il tuo pranzo comodamente dai tuoi dispositivi</p>
@@ -47,7 +47,7 @@
 </nav>
 
 <div class="immagine">
-    <img src="icon.png" id="imm">
+    <img src="<%= account.profile_picture %>" id="imm">
 </div>
 
 <br>
@@ -62,14 +62,14 @@
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
             <div class="fw-bold">Nome</div>
-            Luca
+            <%= account.name %>
         </div>
         <span class="badge bg-primary rounded-pill"></span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
             <div class="fw-bold">Cognome</div>
-            Esposito
+            <%= account.surname %>
         </div>
         <span class="badge bg-primary rounded-pill"></span>
     </li>
@@ -80,33 +80,28 @@
 <br>
 
 <ol class="list-group" id="tabella2">
+
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
             <div class="fw-bold"><h2>Storico Ordini</h2></div>
         </div>
         <span class="badge bg-primary rounded-pill"></span>
     </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Data</div>
-            3.50
-        </div>
-        <span class="badge bg-primary rounded-pill"></span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Data</div>
-            7.00
-        </div>
-        <span class="badge bg-primary rounded-pill"></span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Data</div>
-            4.50
-        </div>
-        <span class="badge bg-primary rounded-pill"></span>
-    </li>
+
+    <% foreach(var order in orders) { %>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">ID</div>
+                <%= order._id %>
+                <div class="fw-bold">Prezzo totale</div>
+                <%= order.total_price %>
+                <div class="fw-bold">Stato</div>
+                <%= order.status %>
+            </div>
+            <span class="badge bg-primary rounded-pill"></span>
+        </li>
+    <% } %>
+
 </ol>
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
