@@ -19,6 +19,7 @@ var accountRouter = require('./routes/account');
 var composeRouter = require('./routes/compose');
 var savedmenuRouter = require('./routes/savedmenu');
 var payRouter = require('./routes/pay');
+var orderRouter = require('./routes/order');
 
 //Initializing Express
 var app = express();
@@ -58,6 +59,7 @@ app.use('/account', accountRouter);
 app.use('/compose', composeRouter);
 app.use('/savedmenu', savedmenuRouter);
 app.use('/pay', payRouter);
+app.use('/order', orderRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
