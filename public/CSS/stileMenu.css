@@ -17,12 +17,7 @@ h4{
     left: 45%;
 }
 
-p{
-    position: absolute;
-    top: -200px;
-    left: 18%;
 
-}
 
 p.P1{
     position: absolute;
@@ -113,4 +108,68 @@ th:last-child{
 
     background-color: #8B0000;
     color:white;
+}
+
+@media (max-width: 760px) {
+    div.col-6{
+        width: 100%;
+    }
+
+    .total-price table{
+        border-top: 3px solid black;
+        width:100%;
+        max-width: 450px;
+    }
+
+    div.btn-group{
+        margin-left: 74%;
+    }
+    input.btn1{
+        margin-left: 75%;
+    }
+
+    #contatti h5{
+        font-size: medium;
+    }
+    #ImmLogo{
+        display: none;
+    }
+    .text-box{
+        text-align: center;
+    }
+    .text-box p{
+        font-size: 15px;
+    }
+
+}
+input.btn1{
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 20px;
+    border: solid 1px #8B0000;
+    background: #8B0000;
+    margin-right: -95%;
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+#ImmLogo{
+    width: 120px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#contatti {
+    margin-top: 14.1%;
+}
+.text-box{
+    margin-left: 10%;
+    margin-top: -5%;
+    font-size: 17px;
+    letter-spacing: 1px;
+    line-height: 26px;
+}
+.text-box h1{
+    font-size: 55px;
+    color: silver;
 }
