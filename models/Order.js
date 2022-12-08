@@ -1,12 +1,13 @@
 var mongoose = require('mongoose');
+var Item = require('Item');
 
 var OrderSchema = new mongoose.Schema({
     owner_id:{
         type: String,
         required: true
     },
-    items_id:{
-        type: [String],
+    items:{
+        type: [Item],
         required: true
     },
     total_price:{
@@ -15,7 +16,8 @@ var OrderSchema = new mongoose.Schema({
     },
     status:{
         type: String,
-        required: true
+        required: true,
+        enum: ['non pagato','ricevuto','in preparazione','pronto','ritirato']
     }
 });
 

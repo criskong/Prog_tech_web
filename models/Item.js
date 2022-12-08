@@ -5,7 +5,12 @@ var ItemSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    name:{
+    type:{
+        type: String,
+        required: true,
+        enum: ['primo','secondo','contorno','bibita']
+    },
+    description:{
         type: String,
         required: true
     },
