@@ -21,6 +21,10 @@ var OrderSchema = new mongoose.Schema({
         type: String,
         required: true,
         enum: ['non pagato','ricevuto','in preparazione','pronto','ritirato']
+    },
+    target_seller:{
+        type: String,
+        required: true
     }
 });
 
