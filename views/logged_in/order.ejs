@@ -14,7 +14,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="CSS/StatoOrdine.css" type="text/css">
+  <link rel="stylesheet" href="CSS/stato.css" type="text/css">
   <link rel="shortcurt icon" href="LOGO_EF.png">
 
 </head>
@@ -23,19 +23,25 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 
-
 <div class="container-fluid">
   <div class="row">
     <div class="col bg-success p-3 text-white">
-      <img src=IMMAGINE/LOGO_EF.png width="120" height="100">
+      <img src="IMMAGINE/LOGO_EF.png" id="ImmLogo">
+      <div class="text-box">
+        <h1><span class="auto-input"></span></h1>
+        <p>L'app per prenotare il tuo pranzo comodamente dai tuoi dispositivi</p>
+      </div>
     </div>
   </div>
 </div>
 
-
 <nav class="navbar navbar-expand-lg bg-light navbar-dim">
   <div class="con container-fluid">
-    <a class="home nav-link active" aria-current="page" href="/prova.html">Home</a>
+    <a class="Home nav-link active" aria-current="page" href="/Home.html">Home</a>
+    <a class="Menu nav-link active" aria-current="page" href="/Menu_salvati.html">Menu</a>
+    <a class="StatoOrdine nav-link active" aria-current="page" href="/StatoOrdine.html">Stato Ordine</a>
+    <a class="Componi nav-link active" aria-current="page" href="/Menu.html">Ordina</a>
+
     <a class="profile btn" href="/Area_personale.html">
       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16" >
         <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
@@ -73,7 +79,7 @@
         <p>pasta e patate</p>
       </div>
       <div class="id2 fw-bold"><h4><b>Secondo</b></h4>
-        <p>RollÃ¨ di pollo</p>
+        <p>Rollè di pollo</p>
       </div>
       <div class="id3 fw-bold"><h4><b>Contorno</b></h4>
         <p>Carote</p>
@@ -85,6 +91,48 @@
     <span class="badge bg-primary rounded-pill"></span>
   </li>
 </ol>
+<button onclick="prova()" type="button" class=" b2 btn btn-danger btn-sm " id="b2">
+  Salva Menu
+</button>
+
+<div class="container-fluid" id="contatti">
+  <div class="row">
+    <div class="col bg-success p-3 text-white">
+      <h5>Contatti:</h5>
+      <h5 style="color: white">-Luca D'Anna</h5>
+      <h5 style="color: white">-Antonio Criscuolo</h5>
+      <h5 style="color: white">-Giovanni Belluomo</h5>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+  var typed = new Typed(".auto-input",{
+    strings: ["ENJOYFOOD"],
+    typeSpeed: 120,
+    backSpeed: 120,
+    loop: true
+
+  })
+</script>
+<script>
+  const button = document.querySelector("#b2");
+  button.addEventListener("click", prova);
+
+
+
+  function prova() {
+    var messaggio="aa";
+    if (messaggio === "aa") {
+      window.alert("Menu salvato")
+    } else {
+      window.alert("Menu non salvato")
+    }
+  }
+
+</script>
+
 
 </body>
 </html>
