@@ -45,7 +45,7 @@ router.get('/', function(req, res, next) {
 /* GET Google OAuth handling. */
 router.get('/google', passport.authenticate('google'));
 
-/* GET Google OAuth handling. */
+/* GET Google OAuth callback. */
 router.get('/google/callback', passport.authenticate('google', {
   successReturnToOrRedirect: '/account',
   failureRedirect: '/login?failed=true'
