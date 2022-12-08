@@ -27,10 +27,10 @@ router.post('/', async (req, res, next) => {
 
     owner_id: req.session.passport.user,
     items: [
-      req.body.primo,
-      req.body.secondo,
-      req.body.contorno,
-      req.body.bibita
+      JSON.stringify(Item.findById(req.body.primo)),
+      JSON.stringify(Item.findById(req.body.secondo)),
+      JSON.stringify(Item.findById(req.body.contorno)),
+      JSON.stringify(Item.findById(req.body.bibita))
     ],
     total_price: parseFloat(await Item.findById(req.body.primo).price) +
                  parseFloat(await Item.findById(req.body.secondo).price) +
