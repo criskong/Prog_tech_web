@@ -21,22 +21,28 @@ router.post('/', async (req, res, next) => {
   */
   if(!req.isAuthenticated())
     res.redirect('/login?failed=false');
+
+  var first_plate = await Item.findById(req.body.primo);
+  var second_plate = await Item.findById(req.body.secondo);
+  var contorno = await Item.findById(req.body.contorno);
+  var drink = await Item.findById(req.body.bibita);
   
   //Creating the order using given elements
   var order = await Order.create({
 
     owner_id: req.session.passport.user,
     items: [
-      JSON.stringify(Item.findById(req.body.primo)),
-      JSON.stringify(Item.findById(req.body.secondo)),
-      JSON.stringify(Item.findById(req.body.contorno)),
-      JSON.stringify(Item.findById(req.body.bibita))
+      JSON.stringify(first_plate),
+      JSON.stringify(second_plate),
+      JSON.stringify(contorno),
+      JSON.stringify(drink)
     ],
-    total_price: parseFloat(await Item.findById(req.body.primo).price) +
-                 parseFloat(await Item.findById(req.body.secondo).price) +
-                 parseFloat(await Item.findById(req.body.contorno).price) +
-                 parseFloat(await Item.findById(req.body.bibita).price),
-    status: 'non pagato'
+    total_price: parseFloat(first_plate.price) +
+                 parseFloat(second_plate.price) +
+                 parseFloat(contorno.price) +
+                 parseFloat(drink.price),
+    status: 'non pagato',
+    target_seller: first_plate.seller
   });
 
   //Creating paypal payment request data
@@ -63,8 +69,7 @@ router.post('/', async (req, res, next) => {
             "currency": "EUR",
             "total": order.total_price
         },
-        "description": "Ordine EnjoyFood per "+
-                        await Item.findById(req.body.primo).seller
+        "description": "Ordine EnjoyFood per "+order.target_seller
     }]
   };
 
