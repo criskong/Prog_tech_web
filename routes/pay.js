@@ -105,13 +105,13 @@ router.post('/success/:orderId', async (req, res, next) => {
         }
       }]
   }, 
-  function (error, payment) {
+  async (error, payment) => {
     if (error) {
       res.redirect('/account');
     } else {
 
       //Updating the order status
-      Order.findByIdAndUpdate(req.params.orderId,{ status: 'ricevuto' })
+      await Order.findByIdAndUpdate(req.params.orderId,{ status: 'ricevuto' });
       
       //redirecting to the order info page
       res.redirect('/order/'+req.params.orderId);
