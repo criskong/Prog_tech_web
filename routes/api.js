@@ -62,7 +62,7 @@ router.post('/:seller/item', async (req, res, next) => {
 
   //Creating the saved_menu
   Item.create({
-    seller: req.body.seller,
+    seller: req.params.seller,
     type: req.body.type,
     description: req.body.description,
     price: req.body.price
