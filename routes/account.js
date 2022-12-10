@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
       //Info of the account related to the session
       account: await Account.findById(req.session.passport.user),
 
-      //TODO: Orders associated with the account
+      //Orders associated with the account
       orders: await Order.find({ owner_id: req.session.passport.user })
     });
 
