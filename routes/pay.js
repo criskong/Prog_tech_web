@@ -13,8 +13,6 @@ paypal.configure({
 /* POST Pay page. */
 router.post('/', async (req, res, next) => {
 
-  console.log(req.body);
-
   /*
     Checking if the user is authenticated and
      acting properly if not
