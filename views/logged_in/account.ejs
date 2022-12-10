@@ -97,16 +97,34 @@
         </li>
     <% } %>
 
-    <% for(let i=0; i < orders.lenght; i++) { %>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
+
+    <% for(let i=0; i < orders.length; i++) { %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+
             <div class="ms-2 me-auto">
-                <div class="fw-bold">ID</div>
-                <%= order._id %>
-                <div class="fw-bold">Prezzo totale</div>
-                <%= order.total_price %>
-                <div class="fw-bold">Stato</div>
-                <%= order.status %>
+                <div class="fw-bold"> ID: </div>
+                <%= orders.at(i)._id %>
             </div>
+
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Mensa: </div> 
+                <%= orders.at(i).target_seller %> 
+            </div>
+
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Prezzo totale: </div>
+                <%= orders.at(i).total_price + '€'%>
+            </div>
+
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Stato: </div>
+                <%= orders.at(i).status %>
+            </div>
+
+            <div class="ms-2 me-auto">
+                <a class="btn md textColor" id="pulsante" href="<%= '/order/'+ encodeURIComponent(orders.at(i)._id) %>" >Visualizza</a>
+            </div>
+
             <span class="badge bg-primary rounded-pill"></span>
         </li>
     <% } %>
