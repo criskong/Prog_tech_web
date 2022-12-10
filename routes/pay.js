@@ -90,8 +90,8 @@ router.post('/', async (req, res, next) => {
 
 });
 
-/* POST Success payment page. */
-router.post('/success/:orderId', async (req, res, next) => {
+/* GET Success payment page. */
+router.get('/success/:orderId', async (req, res, next) => {
 
   /*
     Checking if the user is authenticated and
@@ -100,15 +100,11 @@ router.post('/success/:orderId', async (req, res, next) => {
   if(!req.isAuthenticated())
     res.redirect('/login?failed=false');
 
+  console.log(await Order.findById(req.params.orderId).total_price);
+
   //Executing payment
   paypal.payment.execute(req.query.paymentId,{
-    "payer_id": req.query.PayerID,
-    "transactions": [{
-        "amount": {
-            "currency": "EUR",
-            "total": await Order.findById(req.params.orderId).total_price
-        }
-      }]
+    "payer_id": req.query.PayerID
   }, 
   async (error, payment) => {
     if (error) {
