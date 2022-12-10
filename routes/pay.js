@@ -37,10 +37,10 @@ router.post('/', async (req, res, next) => {
       JSON.stringify(contorno),
       JSON.stringify(drink)
     ],
-    total_price: parseFloat(first_plate.price) +
-                 parseFloat(second_plate.price) +
-                 parseFloat(contorno.price) +
-                 parseFloat(drink.price),
+    total_price: first_plate.price +
+                 second_plate.price +
+                 contorno.price +
+                 drink.price,
     status: 'non pagato',
     target_seller: first_plate.seller
   });
