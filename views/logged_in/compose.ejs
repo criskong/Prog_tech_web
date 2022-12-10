@@ -66,145 +66,170 @@
 
 </nav>
 
-<a href="#" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">Mensa1</a>
-<a href="#" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">Mensa2</a>
-<form action="/pay" method="get">
-    <div class="row g-0">
-        <div class="col-sm-6 col-md-8"><h1>Menu</h1>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            Primi
-                        </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <input class="form-check-input" type="radio" name="flexCheckDefault1" value="carne" id="flexCheckDefault2">
-                            <label class="form-check-label" for="flexCheckDefault2">
-                                carne
-                            </label>
-                            <br>
-                            <input class="form-check-input" type="radio" name="flexCheckDefault1" value="friarielli" id="flexCheckDefault3">
-                            <label class="form-check-label" for="flexCheckDefault3">
-                                PAST e patan
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            secondi
-                        </button>
-                    </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <input class="form-check-input" type="radio" name="flexCheckDefault4" value="carne" id="flexCheckDefault4">
-                            <label class="form-check-label" for="flexCheckDefault4">
-                                carne
-                            </label>
-                            <br>
-                            <input class="form-check-input" type="radio" name="flexCheckDefault4" value="friarielli" id="flexCheckDefault5">
-                            <label class="form-check-label" for="flexCheckDefault5">
-                                PAST e patan
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                            contorni
-                        </button>
-                    </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <input class="form-check-input" type="radio" name="flexCheckDefault6" value="funghi" id="flexCheckDefault6">
-                            <label class="form-check-label" for="flexCheckDefault6">
-                                funghi
-                            </label>
-                            <br>
-                            <input class="form-check-input" type="radio" name="flexCheckDefault6" value="friarielli" id="flexCheckDefault7">
-                            <label class="form-check-label" for="flexCheckDefault7">
-                                friarielli
-                            </label>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
-                            bibite
-                        </button>
-                    </h2>
-                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <input class="form-check-input" type="radio" name="flexCheckDefault8" value="acqua" id="flexCheckDefault8">
-                            <label class="form-check-label" for="flexCheckDefault8">
-                                acqua
-                            </label>
-                            <br>
-                            <input class="form-check-input" type="radio" name="flexCheckDefault8" value="coca-cola" id="flexCheckDefault9">
-                            <label class="form-check-label" for="flexCheckDefault9">
-                                coca-cola
-                            </label>
-                        </div>
-                    </div>
-                    <input class="btn1" type="submit" value="Submit">
+<% if(typeof sellers !== 'undefined') { %>
 
-                    <br>
-                    <br>
+    <br>
+
+    <% for(let i=0; i < sellers.length; i++) { %>
+
+        <a href="<%= '/compose/seller/'+ encodeURIComponent(sellers.at(i)) %>" class="btn btn-danger" role="button"><%= sellers.at(i) %></a>
+        <br>
+        <br>
+
+    <% } %>
+
+    <br>
+
+<% } %>
+
+<% if(typeof primi !== 'undefined') { %>
+
+    <form action="/pay" method="get">
+        <div class="row g-0">
+            <div class="col-sm-6 col-md-8"><h1>Menu di <%= primi.at(0).seller %></h1>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Primi
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+
+                                <% for(let i=0; i < primi.length; i++) { %>
+
+                                    <input class="form-check-input" type="radio" name="primo" value="<%= primi.at(i)._id %>" id="<%= primi.at(i)._id %>">
+                                    <label class="form-check-label" for="<%= primi.at(i)._id %>">
+                                        <%= primi.at(i).description + ' ' + primi.at(i).price + '€'%>
+                                    </label>
+                                    <br>
+                                
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Secondi
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                
+                                <% for(let i=0; i < secondi.length; i++) { %>
+
+                                    <input class="form-check-input" type="radio" name="secondo" value="<%= secondi.at(i)._id %>" id="<%= secondi.at(i)._id %>">
+                                    <label class="form-check-label" for="<%= secondi.at(i)._id %>">
+                                        <%= secondi.at(i).description + ' ' + secondi.at(i).price + '€'%>
+                                    </label>
+                                    <br>
+                                
+                                <% } %>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Contorni
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                
+                                <% for(let i=0; i < contorni.length; i++) { %>
+
+                                    <input class="form-check-input" type="radio" name="contorno" value="<%= contorni.at(i)._id %>" id="<%= contorni.at(i)._id %>">
+                                    <label class="form-check-label" for="<%= contorni.at(i)._id %>">
+                                        <%= contorni.at(i).description + ' ' + contorni.at(i).price + '€'%>
+                                    </label>
+                                    <br>
+                                
+                                <% } %>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Bibite
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                
+                                <% for(let i=0; i < bibite.length; i++) { %>
+
+                                    <input class="form-check-input" type="radio" name="bibita" value="<%= bibite.at(i)._id %>" id="<%= bibite.at(i)._id %>">
+                                    <label class="form-check-label" for="<%= bibite.at(i)._id %>">
+                                        <%= bibite.at(i).description + ' ' + bibite.at(i).price + '€'%>
+                                    </label>
+                                    <br>
+                                
+                                <% } %>
+
+                            </div>
+                        </div>
+                        <input class="btn1" type="submit" value="Submit">
+
+                        <br>
+                        <br>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-        <div class="col-6 col-md-4"><div class="small-container cart-page">
-                <table>
-                    <tr>
-                        <th>Prodotti</th>
-                        <th>Quantita</th>
-                        <th>Subtotal</th>
-                    </tr>
-                    <tr2>
-                        <td>Pasta e patate
-                            <br>
-                            <small>Price: $3.50</small>
-                            <br>
-                            <a href="">Remove</a>
-                        </td>
-                        <td><input type="number" value="1"></td>
-                        <td>$3.50</td>
-                        <div>
-                        </div>
-                    </tr2>
-                </table>
-
-                <br>
-                <br>
-                <div class="total-price">
-
+            <div class="col-6 col-md-4"><div class="small-container cart-page">
                     <table>
                         <tr>
-                            <td>Total</td>
-                            <td>$3.50</td>
+                            <th>Prodotti</th>
+                            <th>Quantita</th>
+                            <th>Subtotal</th>
                         </tr>
+                        <tr2>
+                            <td>Pasta e patate
+                                <br>
+                                <small>Price: $3.50</small>
+                                <br>
+                                <a href="">Remove</a>
+                            </td>
+                            <td><input type="number" value="1"></td>
+                            <td>$3.50</td>
+                            <div>
+                            </div>
+                        </tr2>
                     </table>
-                </div>
-                </table>
-                <div class="btn-group" role="group">
-                    <button type="button" class=" b2 btn btn-danger btn-sm" >
-                        Paypal
-                    </button>
+
+                    <br>
+                    <br>
+                    <div class="total-price">
+
+                        <table>
+                            <tr>
+                                <td>Total</td>
+                                <td>$3.50</td>
+                            </tr>
+                        </table>
+                    </div>
+                    </table>
+                    <div class="btn-group" role="group">
+                        <button type="button" class=" b2 btn btn-danger btn-sm" >
+                            Paypal
+                        </button>
 
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+
+<% } %>
 
 <div class="container-fluid" id="contatti">
     <div class="row">
