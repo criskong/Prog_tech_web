@@ -85,7 +85,7 @@
 
 <% if(typeof primi !== 'undefined') { %>
 
-    <form action="/pay" method="get">
+    <form action="/pay" method="post">
         <div class="row g-0">
             <div class="col-sm-6 col-md-8"><h1>Menu di <%= primi.at(0).seller %></h1>
                 <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -218,7 +218,7 @@
                     </table>
                     <div class="btn-group" role="group">
 
-                            <input type="button" class=" b2 btn btn-danger btn-sm" type="submit" value="Paga con Paypal">
+                        <input type="submit" class=" b2 btn btn-danger btn-sm" type="submit" value="Paga con Paypal">
 
 
                     </div>
