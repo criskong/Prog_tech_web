@@ -1,0 +1,175 @@
+.bg-success {
+    --bs-bg-opacity: 1;
+    background-color: #8B0000 !important;
+}
+
+.marg{
+
+    margin: auto;
+    opacity: 0.6;
+
+}
+
+h4{
+    color: #8B0000;
+    position: absolute;
+    top: -250px;
+    left: 45%;
+}
+
+
+
+p.P1{
+    position: absolute;
+    top: -200px;
+    left: 36%;
+}
+
+h4.C1{
+    color: #8B0000;
+    position: absolute;
+    top: -250px;
+    left: 42%;
+
+}
+p.P2{
+    position: absolute;
+    top: -200px;
+    left: 33%;
+
+}
+h4.C2{
+    color: #8B0000;
+    position: absolute;
+    top: -250px;
+    left: 45%;
+
+}
+
+
+.textColor{
+    color: white;
+}
+
+.d-block{
+    border-radius: 15px 15px 15px 15px;
+}
+
+#operazioni
+{
+    text-align:center;
+    margin-top: 50px;
+    background-color: #8B0000;
+
+}
+h1{
+    color: #8B0000;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    text-align: left;
+    padding: 5px;
+    color: white;
+    background: #8B0000;
+}
+td{
+    padding: 10px 5px;
+}
+td input{
+    width:40px;
+    height: 30px;
+    padding: 5px;
+}
+td a{
+    color: red;
+    font-size: 12px;
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+.total-price table{
+    border-top: 3px solid black;
+    width:100%;
+    max-width: 350px;
+}
+td:last-child{
+    text-align: right;
+}
+th:last-child{
+    text-align: right;
+}
+
+.mensa{
+
+    background-color: #8B0000;
+    color:white;
+}
+
+@media (max-width: 760px) {
+    div.col-6{
+        width: 100%;
+    }
+
+    .total-price table{
+        border-top: 3px solid black;
+        width:100%;
+        max-width: 450px;
+    }
+
+    div.btn-group{
+        margin-left: 74%;
+    }
+    input.btn1{
+        margin-left: 75%;
+    }
+
+    #contatti h5{
+        font-size: medium;
+    }
+    #ImmLogo{
+        display: none;
+    }
+    .text-box{
+        text-align: center;
+    }
+    .text-box p{
+        font-size: 15px;
+    }
+
+}
+input.btn1{
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 20px;
+    border: solid 1px #8B0000;
+    background: #8B0000;
+    margin-right: -95%;
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+#ImmLogo{
+    width: 120px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#contatti {
+    margin-top: 14.1%;
+}
+.text-box{
+    margin-left: 10%;
+    margin-top: -5%;
+    font-size: 17px;
+    letter-spacing: 1px;
+    line-height: 26px;
+}
+.text-box h1{
+    font-size: 55px;
+    color: silver;
+}
