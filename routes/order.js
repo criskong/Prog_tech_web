@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var createError = require('http-errors');
 var Order = require('../models/Order');
+var SavedMenu = require('../models/SavedMenu');
 var QR = require('qrcode');
 
 /* GET Order details page */
@@ -47,6 +49,33 @@ router.get('/:orderId([0-9a-fA-F]{24})/delete', async (req, res, next) => {
     else
       next(createError(405));
   
+});
+
+/* GET Creates a saved menu from a list of items ID  */
+router.get('/:orderId/savedmenu', async (req, res, next) => {
+
+  //Getting the order details
+  var order = await Order.findById(req.params.orderId);
+
+  //Creating the array of items ID
+  var item_ids = [];
+  for(let i=0; i< order.items.length; i++)
+    item_ids.push(JSON.parse(order.items.at(i))._id);
+
+  //Creating the saved menu
+  SavedMenu.create({
+    owner_id: order.owner_id,
+    items_id: item_ids
+  },
+  function (err, savedmenu) {
+
+    if(err)
+      next(createError(500));
+    else
+      res.redirect('/savedmenu');
+
+  });
+
 });
 
 module.exports = router;

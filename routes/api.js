@@ -5,25 +5,6 @@ var SavedMenu = require('../models/SavedMenu');
 var Order = require('../models/Order');
 var Item = require('../models/Item');
 
-/* POST Creates a saved menu from a list of items IDs  */
-router.post('/:userId/savedmenu/add', async (req, res, next) => {
-
-  //Creating the saved_menu
-  SavedMenu.create({
-    owner_id: req.params.userId,
-    items_id: req.body.items
-  },
-  function (err, savedmenu) {
-
-    if(err)
-      next(createError(500));
-    else
-      res.end();
-
-  });
-
-});
-
 /* GET Get all menus that will need to be/are being processed  */
 router.get('/:seller/orders', async (req, res, next) => {
 
@@ -41,7 +22,7 @@ router.get('/:seller/orders', async (req, res, next) => {
 
 });
 
-/* PUT Get all menus that will need to be/are being processed  */
+/* PUT Updates the status of an order  */
 router.put('/:seller/:order/status', async (req, res, next) => {
 
   //Updating the order to the requested status
