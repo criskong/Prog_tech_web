@@ -13,6 +13,9 @@ router.get('/', async (req, res, next) => {
       //Saved menus related to the account
       savedmenus: await SavedMenu.find({ owner_id: req.session.passport.user }),
 
+      //Item schema used for the queries
+      Item: require('../models/Item')
+
     },{async: true}));
   }
   else
