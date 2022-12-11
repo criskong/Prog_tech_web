@@ -55,7 +55,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
-app.use('/menu', menuRouter);
 app.use('/account', accountRouter);
 app.use('/compose', composeRouter);
 app.use('/savedmenu', savedmenuRouter);
