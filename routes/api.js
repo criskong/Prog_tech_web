@@ -78,28 +78,4 @@ router.post('/:seller/item', async (req, res, next) => {
 
 });
 
-/* DELETE Deletes an order */
-router.delete('/:user/order/:order', async (req, res, next) => {
-
-  var order = await Order.findById(req.params.order);
-
-  if(order)
-  {
-    if(order.status === 'non pagato')
-    {
-      Order.deleteOne({ _id: order._id},function (err,order){
-        if(err)
-          next(createError(500));
-        else
-          res.end();
-      });
-    }
-    else
-      next(createError(405));
-  }
-  else
-    next(createError(405));
-
-});
-
 module.exports = router;

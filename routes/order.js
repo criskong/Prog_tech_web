@@ -25,4 +25,28 @@ router.get('/:orderId([0-9a-fA-F]{24})', async (req, res, next) => {
         res.redirect('/login?failed=false');
 });
 
+/* Get Deletes an order */
+router.get('/:orderId([0-9a-fA-F]{24})/delete', async (req, res, next) => {
+
+    var order = await Order.findById(req.params.orderId);
+  
+    if(order)
+    {
+      if(order.status === 'non pagato')
+      {
+        Order.deleteOne({ _id: order._id},function (err,order){
+          if(err)
+            next(createError(500));
+          else
+            res.redirect('/account');
+        });
+      }
+      else
+        next(createError(405));
+    }
+    else
+      next(createError(405));
+  
+});
+
 module.exports = router;
