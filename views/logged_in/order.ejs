@@ -122,7 +122,7 @@
   Salva Menu
 </button>
 <% if(order.status === 'non pagato') { %>
-  <a href="/" class=" b2 btn btn-sm" style="background-color: lightblue"> Paga con PayPal</a>
+  <a href="<%= '/pay/'+ encodeURIComponent(order._id) %>" class=" b2 btn btn-sm" style="background-color: lightblue"> Paga con PayPal</a>
   <a href="<%= '/order/'+ encodeURIComponent(order._id) %>" class=" b2 btn btn-danger btn-sm"> Elimina ordine</a>
 <% } %>
 <br><br>
