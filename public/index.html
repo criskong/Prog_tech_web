@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylesheets/prova.css" type="text/css">
-    <link rel="shortcurt icon" href="images/LOGO_EF.png">
+    <link rel="stylesheet" href="CSS/prova.css" type="text/css">
+    <link rel="shortcurt icon" href="IMMAGINE/LOGO_EF.png">
 
 </head>
 <body>
@@ -19,7 +19,11 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col bg-success p-3 text-white">
-            <img src=images/LOGO_EF.png width="120" height="100">
+            <img src="IMMAGINE/LOGO_EF.png" id="ImmLogo">
+            <div class="text-box">
+                <h1><span class="auto-input"></span></h1>
+                <p>L'app per prenotare il tuo pranzo comodamente dai tuoi dispositivi</p>
+            </div>
         </div>
     </div>
 </div>
@@ -27,12 +31,11 @@
 
 <nav class="navbar navbar-expand-lg bg-light navbar-dim">
     <div class="con container-fluid">
-        <a class="Home nav-link active" aria-current="page" href="/">Home</a>
-        <a class="Menu nav-link active" aria-current="page" href="/savedmenu">Menu</a>
-        <a class="StatoOrdine nav-link active" aria-current="page" href="/StatoOrdine.html">Stato Ordine</a>
-        <a class="Componi nav-link active" aria-current="page" href="/compose">Ordina</a>
+        <a class="Home nav-link active" aria-current="page" href="/Home.html">Home</a>
+        <a class="Menu nav-link active" aria-current="page" href="/Menu_salvati.html">Menu</a>
+        <a class="Componi nav-link active" aria-current="page" href="/Menu.html">Ordina</a>
 
-        <a class="profile btn" href="/account">
+        <a class="profile btn" href="/Area_personale.html">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16" >
                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
             </svg>
@@ -44,35 +47,30 @@
 </nav>
 
 
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="images/R.jpg " class="d-block w-50 marg" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h4><b>Benvenuti</b></h4>
-                <p><b>con questa applicazione potrete accedere ai nostri servizi per la prenotazione di qualsiasi menu di qualsiasi mensa.</b></p>
-            </div>
+            <img src="IMMAGINE/R2.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="images/R2.jpg" class="d-block w-50 marg">
-            <div class="carousel-caption d-none d-md-block">
-                <h4 class="C1"><b>Opreazioni semplici</b></h4>
-                <p class="P1"><b>Personalizza il tuo menu in base a dove vuoi ritirarlo</b></p>
-            </div>
+            <img src="IMMAGINE/R3.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="images/R3.jpg" class="d-block w-50 marg" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h4 class="C2"><b>Comodita'</b></h4>
-                <p class="P2"><b>ordina il tuo menu con qualsiasi dispositivo ovunque ti trovi</b></p>
-            </div>
+            <img src="IMMAGINE/R4.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="IMMAGINE/R5.jpg" class="d-block w-100" alt="...">
         </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -83,7 +81,7 @@
     </button>
 </div>
 <br>
-<div class="container-fluid">
+<div class="container-fluid" id="contatti">
     <div class="row">
         <div class="col bg-success p-3 text-white">
             <h5>Contatti:</h5>
@@ -93,6 +91,16 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var typed = new Typed(".auto-input",{
+            strings: ["ENJOYFOOD"],
+            typeSpeed: 120,
+            backSpeed: 120,
+            loop: true
+
+        })
+</script>
 
 </body>
 </html>
