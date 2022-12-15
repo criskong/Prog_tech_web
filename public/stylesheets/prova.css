@@ -9,7 +9,12 @@
     opacity: 0.6;
 
 }
-
+#carouselExampleFade{
+    width: 50%;
+    position: relative;
+    left: 25%;
+    padding-top: 20px;
+}
 h4{
     color: #8B0000;
     position: absolute;
@@ -70,11 +75,12 @@ h4.C2{
         margin-top: 39%;
     }
 
-
-    .w-50{
-        width: 90% !important;
-        margin-top: 30%;
+    #carouselExampleFade{
+        width: 100%;
+        margin-left: -25%;
+        margin-top: 22%;
     }
+
 
     .carousel-control-next, .carousel-control-prev{
 
