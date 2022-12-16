@@ -72,13 +72,18 @@
         </div>
         <span class="badge bg-primary rounded-pill"></span>
     </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <a class=" btn md textColor" id="pulsante" href="/account/logout" >LogOut</a>
+        <span class="badge bg-primary rounded-pill"></span>
+    </li>
 </ol>
 
 
 <br>
+
 <br>
 
-<ol class="list-group" id="tabella2">
+<ol class="list-group" id="tabella1">
 
     <li class="storico list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
@@ -98,7 +103,7 @@
 
 
     <% for(let i=0; i < orders.length; i++) { %>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
 
         <div class="ms-2 me-auto">
             <div class="fw-bold"> ID: </div>
@@ -110,6 +115,10 @@
             <%= orders.at(i).target_seller %>
         </div>
 
+    </li>
+
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+
         <div class="ms-2 me-auto">
             <div class="fw-bold">Prezzo totale: </div>
             <%= orders.at(i).total_price + '€'%>
@@ -120,22 +129,21 @@
             <%= orders.at(i).status %>
         </div>
 
-
-
-        <span class="badge bg-primary rounded-pill"></span>
     </li>
 
-    <div class="b1 ms-2 me-auto">
-        <a class=" btn md textColor" id="pulsante" href="<%= '/order/'+ encodeURIComponent(orders.at(i)._id) %>" >Visualizza</a>
-    </div>
+    <li class="list-group-item justify-content-between align-items-start">
+
+        <div class="ms me-auto">
+            <a class=" btn md textColor" id="pulsante" href="<%= '/order/'+ encodeURIComponent(orders.at(i)._id) %>" >Visualizza</a>
+        </div>
+
+    </li>
+
+    <span class="badge bg-primary rounded-pill"></span>
 
     <% } %>
 
 </ol>
-
-<div class=" b2 d-grid gap-2 d-md-flex justify-content-md-end">
-    <a class=" btn md textColor" id="pulsante" href="/account/logout" >LogOut</a>
-</div>
 
 
 <div class="container-fluid" id="contatti">
