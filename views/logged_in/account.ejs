@@ -107,8 +107,8 @@
             </div>
 
             <div class="ms-2 me-auto">
-                <div class="fw-bold">Mensa: </div> 
-                <%= orders.at(i).target_seller %> 
+                <div class="fw-bold">Mensa: </div>
+                <%= orders.at(i).target_seller %>
             </div>
 
             <div class="ms-2 me-auto">
@@ -121,18 +121,19 @@
                 <%= orders.at(i).status %>
             </div>
 
-            <div class="ms-2 me-auto">
-                <a class="btn md textColor" id="pulsante" href="<%= '/order/'+ encodeURIComponent(orders.at(i)._id) %>" >Visualizza</a>
-            </div>
+
 
             <span class="badge bg-primary rounded-pill"></span>
         </li>
+        <div class="b1 ms-2 me-auto">
+            <a class=" btn md textColor" id="pulsante" href="<%= '/order/'+ encodeURIComponent(orders.at(i)._id) %>" >Visualizza</a>
+        </div>
     <% } %>
 
 </ol>
 
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <a class="btn md textColor" id="pulsante" href="/account/logout" >LogOut</a>
+<div class=" b2 d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class=" btn md textColor" id="pulsante" href="/account/logout" >LogOut</a>
 </div>
 
 
