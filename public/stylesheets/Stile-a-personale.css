@@ -93,7 +93,7 @@ div.h4{
 
 }
 
-@media (max-width: 1180px){
+@media (max-width: 1368px){
     #ImmLogo{
         display: none;
     }
@@ -129,17 +129,20 @@ div.h4{
 
     .b1{
         width:500px;
-        position: static;
+
     }
     .b2{
-        margin-top:-8.5%;
+        margin-top:-7.5%;
         width: 2000px;
-        margin-left:86%
+        margin-left:89%
     }
     #contatti{
-        margin-top: 30%;
+        margin-top: 25%;
     }
     #html{
         height: 0;
+    }
+    .storico{
+        margin-top:7%;
     }
 }
