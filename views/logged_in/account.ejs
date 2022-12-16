@@ -67,7 +67,7 @@
         <span class="badge bg-primary rounded-pill"></span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
+        <div class="cognome ms-2 me-auto">
             <div class="fw-bold">Cognome</div>
             <%= account.surname %>
         </div>
@@ -81,7 +81,7 @@
 
 <ol class="list-group" id="tabella2">
 
-    <li class="list-group-item d-flex justify-content-between align-items-start">
+    <li class="storico list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
             <div class="fw-bold"><h2>Storico Ordini</h2></div>
         </div>
@@ -89,45 +89,47 @@
     </li>
 
     <% if(orders.length == 0) {%>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-                Nessun ordine effettuato
-            </div>
-            <span class="badge bg-primary rounded-pill"></span>
-        </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            Nessun ordine effettuato
+        </div>
+        <span class="badge bg-primary rounded-pill"></span>
+    </li>
     <% } %>
 
 
     <% for(let i=0; i < orders.length; i++) { %>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
 
-            <div class="ms-2 me-auto">
-                <div class="fw-bold"> ID: </div>
-                <%= orders.at(i)._id %>
-            </div>
-
-            <div class="ms-2 me-auto">
-                <div class="fw-bold">Mensa: </div>
-                <%= orders.at(i).target_seller %>
-            </div>
-
-            <div class="ms-2 me-auto">
-                <div class="fw-bold">Prezzo totale: </div>
-                <%= orders.at(i).total_price + '€'%>
-            </div>
-
-            <div class="ms-2 me-auto">
-                <div class="fw-bold">Stato: </div>
-                <%= orders.at(i).status %>
-            </div>
-
-
-
-            <span class="badge bg-primary rounded-pill"></span>
-        </li>
-        <div class="b1 ms-2 me-auto">
-            <a class=" btn md textColor" id="pulsante" href="<%= '/order/'+ encodeURIComponent(orders.at(i)._id) %>" >Visualizza</a>
+        <div class="ms-2 me-auto">
+            <div class="fw-bold"> ID: </div>
+            <%= orders.at(i)._id %>
         </div>
+
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Mensa: </div>
+            <%= orders.at(i).target_seller %>
+        </div>
+
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Prezzo totale: </div>
+            <%= orders.at(i).total_price + '€'%>
+        </div>
+
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Stato: </div>
+            <%= orders.at(i).status %>
+        </div>
+
+
+
+        <span class="badge bg-primary rounded-pill"></span>
+    </li>
+
+    <div class="b1 ms-2 me-auto">
+        <a class=" btn md textColor" id="pulsante" href="<%= '/order/'+ encodeURIComponent(orders.at(i)._id) %>" >Visualizza</a>
+    </div>
+
     <% } %>
 
 </ol>
