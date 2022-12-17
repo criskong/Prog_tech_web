@@ -41,7 +41,7 @@
         <div class="col bg-success p-3 text-white">
             <img src="/images/LOGO_EF.png" id="ImmLogo">
             <div class="text-box">
-                <h1><span class="auto-input"></span></h1>
+                <h1 class="ef"><span class="auto-input"></span></h1>
                 <p>L'app per prenotare il tuo pranzo comodamente dai tuoi dispositivi</p>
             </div>
         </div>
@@ -96,7 +96,7 @@
                 <li class="list-group-item">
                     <input class="form-check-input" type="radio" name="primo" value="<%= primi.at(i)._id %>" id="<%= primi.at(i)._id %>" >
                     <label class="form-check-label" for="<%= primi.at(i)._id %>">
-                    <%= primi.at(i).description + ' ' + primi.at(i).price + '€'%>
+                        <%= primi.at(i).description + ' ' + primi.at(i).price + '€'%>
                     </label>
                 </li>
             <% } %>
@@ -109,7 +109,7 @@
                 <li class="list-group-item">
                     <input class="form-check-input" type="radio" name="secondo" value="<%= secondi.at(i)._id %>" id="<%= secondi.at(i)._id %>">
                     <label class="form-check-label" for="<%= secondi.at(i)._id %>">
-                    <%= secondi.at(i).description + ' ' + secondi.at(i).price + '€'%>
+                        <%= secondi.at(i).description + ' ' + secondi.at(i).price + '€'%>
                     </label>
                 </li>
             <% } %>
@@ -122,7 +122,7 @@
                 <li class="list-group-item">
                     <input class="form-check-input" type="radio" name="contorno" value="<%= contorni.at(i)._id %>" id="<%= contorni.at(i)._id %>">
                     <label class="form-check-label" for="<%= contorni.at(i)._id %>">
-                    <%= contorni.at(i).description + ' ' + contorni.at(i).price + '€'%>
+                        <%= contorni.at(i).description + ' ' + contorni.at(i).price + '€'%>
                     </label>
                 </li>
             <% } %>
@@ -135,29 +135,21 @@
                 <li class="list-group-item">
                     <input class="form-check-input" type="radio" name="bibita" value="<%= bibite.at(i)._id %>" id="<%= bibite.at(i)._id %>">
                     <label class="form-check-label" for="<%= bibite.at(i)._id %>">
-                    <%= bibite.at(i).description + ' ' + bibite.at(i).price + '€'%>
+                        <%= bibite.at(i).description + ' ' + bibite.at(i).price + '€'%>
                     </label>
                 </li>
             <% } %>
         </ul><br>
 
         </ul>
-
-        <input type="submit" class=" b2 btn btn-danger btn-sm" type="submit" value="Paga con Paypal">
+        <div>
+            <input type="submit" class=" b2 btn btn-primary btn-sm" type="submit" value="Paga con Paypal">
+            <img class="pay" src="images/Paypal.jpg">
+        </div>
     </form>
 
 <% } %>
 
-<div class="container-fluid" id="contatti">
-    <div class="row">
-        <div class="col bg-success p-3 text-white">
-            <h5>Contatti:</h5>
-            <h5 style="color: white">-Luca D'Anna</h5>
-            <h5 style="color: white">-Antonio Criscuolo</h5>
-            <h5 style="color: white">-Giovanni Belluomo</h5>
-        </div>
-    </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>

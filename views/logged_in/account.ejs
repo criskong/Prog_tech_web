@@ -73,7 +73,7 @@
         <span class="badge bg-primary rounded-pill"></span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
-        <a class=" btn md textColor" id="pulsante" href="/account/logout" >LogOut</a>
+        <a class=" btn md textColor" id="pulsante1" href="/account/logout" >LogOut</a>
         <span class="badge bg-primary rounded-pill"></span>
     </li>
 </ol>
@@ -93,69 +93,59 @@
     </li>
 
     <% if(orders.length == 0) {%>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            Nessun ordine effettuato
-        </div>
-        <span class="badge bg-primary rounded-pill"></span>
-    </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                Nessun ordine effettuato
+            </div>
+            <span class="badge bg-primary rounded-pill"></span>
+        </li>
     <% } %>
 
 
     <% for(let i=0; i < orders.length; i++) { %>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
 
-        <div class="ms-2 me-auto">
-            <div class="fw-bold"> ID: </div>
-            <%= orders.at(i)._id %>
-        </div>
+            <div class="ms-2 me-auto">
+                <div class="fw-bold"> ID: </div>
+                <%= orders.at(i)._id %>
+            </div>
 
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Mensa: </div>
-            <%= orders.at(i).target_seller %>
-        </div>
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Mensa: </div>
+                <%= orders.at(i).target_seller %>
+            </div>
 
-    </li>
+        </li>
 
-    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
 
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Prezzo totale: </div>
-            <%= orders.at(i).total_price + '€'%>
-        </div>
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Prezzo totale: </div>
+                <%= orders.at(i).total_price + '€'%>
+            </div>
 
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">Stato: </div>
-            <%= orders.at(i).status %>
-        </div>
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Stato: </div>
+                <%= orders.at(i).status %>
+            </div>
 
-    </li>
+        </li>
 
-    <li class="list-group-item justify-content-between align-items-start">
+        <li class="list-group-item justify-content-between align-items-start">
 
-        <div class="ms me-auto">
-            <a class=" btn md textColor" id="pulsante" href="<%= '/order/'+ encodeURIComponent(orders.at(i)._id) %>" >Visualizza</a>
-        </div>
+            <div class="ms me-auto">
+                <a class=" btn md textColor" id="pulsante2" href="<%= '/order/'+ encodeURIComponent(orders.at(i)._id) %>" >Visualizza</a>
+            </div>
 
-    </li>
+        </li>
 
-    <span class="badge bg-primary rounded-pill"></span>
+        <span class="badge bg-primary rounded-pill"></span>
 
     <% } %>
 
 </ol>
 
 
-<div class="container-fluid" id="contatti">
-    <div class="row">
-        <div class="col bg-success p-3 text-white">
-            <h5>Contatti:</h5>
-            <h5 style="color: white">-Luca D'Anna</h5>
-            <h5 style="color: white">-Antonio Criscuolo</h5>
-            <h5 style="color: white">-Giovanni Belluomo</h5>
-        </div>
-    </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
@@ -170,3 +160,4 @@
 
 </body>
 </html>
+
