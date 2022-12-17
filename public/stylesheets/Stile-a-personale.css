@@ -10,7 +10,19 @@
     height:100px;
     border-radius: 50%;
 }
-#pulsante{
+#pulsante1{
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border: solid 1px #8B0000;
+    background: #8B0000;
+    margin-right: 95%;
+
+}
+#pulsante2{
     outline: none;
     cursor: pointer;
     text-align: center;
@@ -54,9 +66,7 @@ div.h4{
     color: silver;
 }
 
-#contatti{
-    margin-top: 6.3%;
-}
+
 
 
 @media (max-width: 760px){
@@ -87,9 +97,7 @@ div.h4{
         width: 100px;
         height: 100px;
     }
-    #contatti h5{
-        font-size: medium;
-    }
+
 
 }
 
@@ -114,17 +122,10 @@ div.h4{
         margin-left: 0%;
     }
 
-    #pulsante{
-        margin-left: 0%;
-        width: 25%;
-    }
     #imm{
         margin-left: 0px;
         width: 100px;
         height: 100px;
-    }
-    #contatti h5{
-        font-size: medium;
     }
 
     .b1{
@@ -135,9 +136,6 @@ div.h4{
         margin-top:-7.5%;
         width: 2000px;
         margin-left:89%
-    }
-    #contatti{
-        margin-top: 25%;
     }
     #html{
         height: 0;

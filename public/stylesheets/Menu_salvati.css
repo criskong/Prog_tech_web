@@ -67,9 +67,6 @@ h4.C2{
 
 @media (max-width: 760px){
 
-    #contatti h5{
-        font-size: medium;
-    }
 
 
     #ImmLogo{
@@ -90,10 +87,27 @@ h4.C2{
 
 
 }
+@media (max-width: 1368px){
+    #ImmLogo{
+        display: none;
+    }
+    .text-box{
+        text-align: center;
+        margin-bottom: 5%;
+        padding-top: 50px;
 
-#contatti {
-    margin-top: 21%;
+    }
+    .text-box p{
+        font-size: 15px;
+
+    }
+
+
 }
+
+
+
+
 #ImmLogo{
     width: 120px;
     height: 100px;
@@ -110,4 +124,11 @@ h4.C2{
 .text-box h1{
     font-size: 55px;
     color: silver;
+}
+.pay{
+    width: 25px;
+}
+
+h1{
+    color: #8B0000;
 }

@@ -128,14 +128,12 @@ th:last-child{
         margin-left: 75%;
     }
 
-    #contatti h5{
-        font-size: medium;
-    }
+
     #ImmLogo{
         display: none;
     }
-    .text-box{
-        text-align: center;
+    .ef{
+        margin-right: 90%;
     }
     .text-box p{
         font-size: 15px;
@@ -159,9 +157,7 @@ input.btn1{
     border-radius: 50%;
 }
 
-#contatti {
-    margin-top: 14.1%;
-}
+
 .text-box{
     margin-left: 10%;
     margin-top: -5%;
@@ -172,4 +168,22 @@ input.btn1{
 .text-box h1{
     font-size: 55px;
     color: silver;
+}
+.pay{
+    width: 25px;
+}
+@media (max-width: 1180px){
+    #ImmLogo{
+        display: none;
+    }
+    .text-box{
+        padding-top: 5%;
+    }
+    .auto-input{
+        margin-left: 20%;
+    }
+    p{
+        margin-left: 5%;
+    }
+
 }
