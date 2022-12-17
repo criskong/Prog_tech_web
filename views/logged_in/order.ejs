@@ -168,14 +168,8 @@
     button.addEventListener("click", prova);
 
 
-
     function prova() {
-        var messaggio="aa";
-        if (messaggio === "aa") {
-            window.alert("Menu salvato")
-        } else {
-            window.alert("Menu non salvato")
-        }
+        window.location.replace('<%= '/order/' + order._id + '/savedmenu'%>');
     }
 
 </script>
