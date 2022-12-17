@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>EnjoyFood</title>
-  <link rel="stylesheet" href="stileLogin.css" type="text/css">
+  <link rel="stylesheet" href="stylesheets/stileLogin.css" type="text/css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E%22%3E">
    <meta name="viewport"content="width=device-width", initial-scale=1.0">
   <link rel="shortcurt icon" href="/images/LOGO_EF.png">
@@ -26,15 +26,17 @@
   <p class="par">EnjoyFood: l'app che ti permette di prenotare il pranzo<br> nelle tue mense preferite dai tuoi dispositivi</p>
 
   <div class="form">
-    <h2>Login here</h2>
-    <div class=bottone">
-    <button class="google btn" type="button"><img class="img" src="images/google.png" alt=""> Login with Google </button>
-      <div class="alert alert-danger d-flex align-items-center" role="alert">
-        <div class="alert alert-danger" role="alert">
-        Errore!!! non sei registrato!!!
-        </div>
-    </div>
+    <% if(failed === "true") {%>
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+      <div class="alert alert-danger" role="alert">
+      Login non andato a buon fine
       </div>
+    </div>
+    <%}%>
+    <h2>Metodi di login</h2>
+    <div class="bottone" onclick="window.location.replace('/login/google')">
+      <button class="google btn" type="button"><img class="img" src="images/google.png" alt="Google"> Login with Google </button>
+    </div>
   </div>
 </div>
 </div>

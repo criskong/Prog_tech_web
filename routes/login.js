@@ -39,7 +39,11 @@ passport.deserializeUser((userId,done) => { done(null,userId)});
 
 /* GET Login page. */
 router.get('/', function(req, res, next) {
-  res.render('login', { failed: req.query.failed });
+
+  if(req.isAuthenticated())
+  res.redirect('/account');
+  else
+    res.render('login', { failed: req.query.failed });
 });
 
 /* GET Google OAuth handling. */
