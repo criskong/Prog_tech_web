@@ -26,8 +26,7 @@ async (accessToken, refreshToken, profile, cb) => {
       id: profile.id,
       provider: profile.provider,
       name: profile.name.givenName,
-      surname: profile.name.familyName,
-      profile_picture: profile.photos[0].value
+      surname: profile.name.familyName
     });
   }
 
