@@ -1,6 +1,6 @@
 # EnjoyFood
 
-EnjoyFood is a web app created for the Web Technologies (TW6) exam at he University of Naples "Parthenope"
+EnjoyFood is a web app created for the Web Technologies (TW6) exam at the University of Naples "Parthenope"
 
 ### The web app can be tested by following this steps:
 
