@@ -6,6 +6,18 @@ EnjoyFood is a web app created for the Web Technologies (TW6) exam at the Univer
 
 ### 1. Cloning the repository
 
+The repository can be cloned using the following command:
+
+```ps
+git clone https://github.com/criskong/Prog_tech_web.git
+```
+
+Then go into the generated folder for the next steps
+
+```ps
+cd Prog_tech_web
+```
+
 ### 2. Installing the missing dependencies
     
 This can be done by using the following command:
@@ -32,10 +44,10 @@ The values contained in the variables must be substituted with the real and work
 
 ### 4. Start the web app
 
-The web app can be started by typing the following command (on a Linux environment):
+The web app can be started by typing the following command:
 
 ```ps
-DEBUG=prog-tech-web:* npm start
+npm start
 ```
     
     
